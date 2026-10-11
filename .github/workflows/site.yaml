@@ -34,7 +34,11 @@ jobs:
           NVD_API_KEY: ${{ secrets.NVD_API_KEY }}
       - name: Ensure CNAME and .nojekyll in staging
         run: |
-          test -f target/staging/CNAME || echo "mybatis.gh.miniasp.com" > target/staging/CNAME
+          if [ "${{ github.repository_owner }}" = "doggy8088" ]; then
+            test -f target/staging/CNAME || echo "mybatis.gh.miniasp.com" > target/staging/CNAME
+          else
+            rm -f target/staging/CNAME
+          fi
           test -f target/staging/.nojekyll || touch target/staging/.nojekyll
       - name: Deploy Site to gh-pages
         uses: JamesIves/github-pages-deploy-action@fa24774553152dd7873cd16ebd8d959b010c5445 # v4

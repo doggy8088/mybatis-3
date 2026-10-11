@@ -1,9 +1,9 @@
-title: MyBatis 3 | The SQL Builder Class
+title: MyBatis 3 | SQL Builder 類別
 author: Clinton Begin
 
 <h1 class="d-none">Avoid blank site</h1>
 
-## The SQL Builder Class
+## SQL Builder 類別
 
 ### 問題所在
 

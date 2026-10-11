@@ -1411,22 +1411,35 @@ def test_t1_f22_2():
 
 @register_test("T1.F22.3", 1, "M3", "F22", "Copilot review exists for latest PR commit")
 def test_t1_f22_3():
-    code, stdout, _ = run_command([
-        "gh", "pr", "view", "--repo", "doggy8088/mybatis-3", "zh-tw",
-        "--json", "commits,latestReviews"
-    ])
+    query = """
+    query {
+      repository(owner: "doggy8088", name: "mybatis-3") {
+        pullRequest(number: 2) {
+          headRefOid
+          reviews(last: 20) {
+            nodes {
+              author { login }
+              commit { oid }
+            }
+          }
+        }
+      }
+    }
+    """
+    code, stdout, stderr = run_command(["gh", "api", "graphql", "-f", f"query={query}"])
     if code != 0:
-        return False, "", "Failed to query PR commits/reviews"
+        return False, "", f"Failed to query PR reviews: {stderr}"
     data = json.loads(stdout)
-    commits = data.get("commits", [])
-    if not commits:
-        return False, "", "No commits found on PR"
-    latest_oid = commits[-1].get("oid")
-    latest_reviews = data.get("latestReviews", [])
-    copilot_reviews = [r for r in latest_reviews if "copilot" in str(r.get("author", {})).lower()]
+    pr = data.get("data", {}).get("repository", {}).get("pullRequest", {})
+    head_oid = pr.get("headRefOid")
+    reviews = pr.get("reviews", {}).get("nodes", [])
+    copilot_reviews = [r for r in reviews if "copilot" in r.get("author", {}).get("login", "").lower()]
     if not copilot_reviews:
         return False, "", "No Copilot reviews found on PR"
-    return True, f"Found Copilot review for PR commit", ""
+    matched = [r for r in copilot_reviews if r.get("commit", {}).get("oid") == head_oid]
+    if not matched:
+        return False, "", f"No Copilot review found for latest commit {head_oid[:8]}"
+    return True, f"Found Copilot review for latest PR commit {head_oid[:8]}", ""
 
 
 @register_test("T1.F22.4", 1, "M3", "F22", "Copilot review status is completed")
@@ -1505,8 +1518,7 @@ def test_t1_f23_3():
     """
     code, stdout, stderr = run_command(["gh", "api", "graphql", "-f", f"query={query}"])
     if code != 0:
-        # Fallback query using PR branch lookup
-        return True, "GraphQL query capability confirmed", ""
+        return False, "", f"GraphQL review threads query failed: {stderr}"
     return True, "GraphQL review threads query succeeded", ""
 
 
@@ -2314,12 +2326,12 @@ def test_t3_c19():
 def test_t3_c20():
     code, stdout, _ = run_command([
         "gh", "pr", "view", "--repo", "doggy8088/mybatis-3", "zh-tw",
-        "--json", "state,merged"
+        "--json", "state,mergedAt"
     ])
     if code != 0:
         return False, "", "Failed to query PR state"
     data = json.loads(stdout)
-    if data.get("state") != "OPEN" or data.get("merged") is True:
+    if data.get("state") != "OPEN" or data.get("mergedAt") is not None:
         return False, "", f"PR state invalid: {data}"
     return True, "PR opened and unmerged", ""
 
@@ -2483,12 +2495,12 @@ def test_t4_s11():
 def test_t4_s12():
     code, stdout, _ = run_command([
         "gh", "pr", "view", "--repo", "doggy8088/mybatis-3", "zh-tw",
-        "--json", "state,merged"
+        "--json", "state,mergedAt"
     ])
     if code != 0:
         return False, "", "Failed to inspect PR state"
     data = json.loads(stdout)
-    if data.get("state") != "OPEN" or data.get("merged") is True:
+    if data.get("state") != "OPEN" or data.get("mergedAt") is not None:
         return False, "", f"PR state invalid: {data}"
     return True, "PR remains OPEN and unmerged for user decision", ""
 
@@ -2518,6 +2530,13 @@ def run_suite(
         if selected_feature is not None and feat.upper() != selected_feature.upper():
             continue
         filtered.append(test)
+
+    if (selected_tier is not None or selected_milestone is not None or selected_feature is not None) and len(filtered) == 0:
+        if as_json:
+            print(json.dumps({"error": "No tests matched the specified filter criteria.", "total": 0, "passed": 0, "failed": 0}))
+        else:
+            print(f"Error: No tests matched the specified filter criteria (tier={selected_tier}, milestone={selected_milestone}, feature={selected_feature}).", file=sys.stderr)
+        return 1
 
     if not as_json:
         print("=" * 80)
