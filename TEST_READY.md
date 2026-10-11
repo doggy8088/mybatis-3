@@ -4,11 +4,12 @@
 
 The comprehensive, opaque-box, 4-tier End-to-End (E2E) Test Suite for the MyBatis 3 Traditional Chinese (`zh_TW`) documentation localization, GitHub Pages publishing, and Pull Request / GitHub Copilot code review lifecycle is fully designed, implemented, and verified.
 
-- **Test Runner Location**: `/Users/will/projects/mybatis-3/test_e2e_suite.sh`
-- **Core Engine**: `/Users/will/projects/mybatis-3/test_e2e_suite.py`
-- **Specification Document**: `/Users/will/projects/mybatis-3/TEST_INFRA.md`
+- **Test Runner Location**: `test_e2e_suite.sh`
+- **Core Engine**: `test_e2e_suite.py`
+- **Specification Document**: `TEST_INFRA.md`
 - **Total Test Cases**: **222 automated tests** across all 4 tiers and 25 features.
-- **Zero External Dependencies**: Implemented entirely in Python standard library (ET XML parser, regex AST inspection, socket DNS, SSL TLS, urllib HTTP, struct PNG header analysis, subprocess Git/gh CLI).
+- **Python Dependencies**: Zero third-party Python packages (implemented entirely using Python 3 standard library: `xml.etree.ElementTree`, `re`, `socket`, `ssl`, `urllib.request`, `struct`, `subprocess`, `json`).
+- **Runtime Prerequisites**: Git CLI (`git`), GitHub CLI (`gh` with `gh-copilot-review` extension), Java / Maven wrapper (`./mvnw`), and network access for live DNS/HTTPS verification.
 
 ---
 

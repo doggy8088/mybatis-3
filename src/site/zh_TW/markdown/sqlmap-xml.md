@@ -78,7 +78,7 @@ select 元素具備更多屬性，允許您微調每個陳述式的行為細節�
 | `flushCache` | 將其設為 `true` 會導致每次呼叫此陳述式時同時清除本地快取與二級快取。預設值：select 陳述式為 `false`。 |
 | `useCache` | 將其設為 `true` 會導致此陳述式的結果被快取至二級快取中。預設值：select 陳述式為 `true`。 |
 | `timeout` | 設定驅動程式在拋出例外之前，等待資料庫回應請求的最大秒數。預設為 `unset`（取決於驅動程式）。 |
-| `fetchSize` | 這是給驅動程式的提示，嘗試讓驅動程式以每次回傳等同於此設定數量的列批次批次載入資料。預設為 `unset`（取決於驅動程式）。 |
+| `fetchSize` | 這是給驅動程式的提示，嘗試讓驅動程式以每次回傳等同於此設定數量的列批次載入資料。預設為 `unset`（取決於驅動程式）。 |
 | `statementType` | 可為 `STATEMENT`、`PREPARED` 或 `CALLABLE` 其中之一。這會使 MyBatis 分別使用 `Statement`、`PreparedStatement` 或 `CallableStatement`。預設值：`PREPARED`。 |
 | `resultSetType` | 可為 `FORWARD_ONLY`&#124;`SCROLL_SENSITIVE`&#124;`SCROLL_INSENSITIVE`&#124;`DEFAULT`（同 unset）其中之一。預設為 `unset`（取決於驅動程式）。 |
 | `databaseId` | 若已設定 databaseIdProvider，MyBatis 將載入所有沒有 `databaseId` 屬性或其 `databaseId` 與目前資料庫相符的陳述式。若同時找到帶有與不帶有 `databaseId` 的相同陳述式，後者將被捨棄。 |

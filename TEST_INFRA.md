@@ -96,8 +96,8 @@ The MyBatis 3 Localization and Publishing End-to-End (E2E) Test Suite is designe
 ## 5. Test Runner Invocation
 
 ### Executable Runners
-- Bash entrypoint: `/Users/will/projects/mybatis-3/test_e2e_suite.sh`
-- Python core engine: `/Users/will/projects/mybatis-3/test_e2e_suite.py`
+- Bash entrypoint: `test_e2e_suite.sh`
+- Python core engine: `test_e2e_suite.py`
 
 ### Common Invocation Examples
 ```bash
