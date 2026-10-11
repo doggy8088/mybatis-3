@@ -6,7 +6,7 @@ The MyBatis 3 Localization and Publishing End-to-End (E2E) Test Suite is designe
 
 ### Core Tenets
 1. **Opaque-Box Specification Verification**:
-   Tests evaluate observable behaviors, build outputs, file artifacts, XML structures, markdown syntax, network responses, and Git/GitHub API states against documented requirements (`ORIGINAL_REQUEST.md` and `PROJECT.md`), without relying on internal implementation shortcuts.
+   Tests evaluate observable behaviors, build outputs, file artifacts, XML structures, markdown syntax, network responses, and Git/GitHub API states against documented requirements (`TEST_INFRA.md` and `TEST_READY.md`), without relying on internal implementation shortcuts.
 2. **Authoritative Output Derivation**:
    Expected values are derived directly from the official English reference documentation (`src/site/markdown/*.md`), Maven Site Plugin 3.22.0 / Fluido Skin 2.1.0 specifications, Taiwan Traditional Chinese (正體中文慣用術語) terminology standards, and GitHub REST/GraphQL API specifications.
 3. **Progressive Testability & Isolation**:
