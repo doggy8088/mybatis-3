@@ -13,6 +13,7 @@
             <ul>
                 <li><a href="org/apache/ibatis/executor/loader/AbstractEnhancedDeserializationProxy.html#AbstractEnhancedDeserializationProxy" target="classFrame">AbstractEnhancedDeserializationProxy</a></li>
                 <li><a href="org/apache/ibatis/jdbc/AbstractSQL.html#AbstractSQL" target="classFrame">AbstractSQL</a></li>
+                <li><a href="org/apache/ibatis/jdbc/AbstractSQL.html#AbstractSQL.ForEachConsumer" target="classFrame">AbstractSQL.ForEachConsumer</a></li>
                 <li><a href="org/apache/ibatis/jdbc/AbstractSQL.html#AbstractSQL.SQLStatement" target="classFrame">AbstractSQL.SQLStatement</a></li>
                 <li><a href="org/apache/ibatis/jdbc/AbstractSQL.html#AbstractSQL.SQLStatement.LimitingRowsStrategy" target="classFrame">AbstractSQL.SQLStatement.LimitingRowsStrategy</a></li>
                 <li><a href="org/apache/ibatis/jdbc/AbstractSQL.html#AbstractSQL.SQLStatement.StatementType" target="classFrame">AbstractSQL.SQLStatement.StatementType</a></li>
@@ -20,9 +21,9 @@
                 <li><a href="org/apache/ibatis/executor/loader/AbstractSerialStateHolder.html#AbstractSerialStateHolder" target="classFrame">AbstractSerialStateHolder</a></li>
                 <li><a href="org/apache/ibatis/type/Alias.html#Alias" target="classFrame">Alias</a></li>
                 <li><a href="org/apache/ibatis/reflection/invoker/AmbiguousMethodInvoker.html#AmbiguousMethodInvoker" target="classFrame">AmbiguousMethodInvoker</a></li>
+                <li><a href="org/apache/ibatis/annotations/AnnotationConstants.html#AnnotationConstants" target="classFrame">AnnotationConstants</a></li>
                 <li><a href="org/apache/ibatis/annotations/Arg.html#Arg" target="classFrame">Arg</a></li>
                 <li><a href="org/apache/ibatis/type/ArrayTypeHandler.html#ArrayTypeHandler" target="classFrame">ArrayTypeHandler</a></li>
-                <li><a href="org/apache/ibatis/type/ArrayTypeHandler.html#ArrayTypeHandler.null" target="classFrame">ArrayTypeHandler.null</a></li>
                 <li><a href="org/apache/ibatis/reflection/ArrayUtil.html#ArrayUtil" target="classFrame">ArrayUtil</a></li>
                 <li><a href="org/apache/ibatis/session/AutoMappingBehavior.html#AutoMappingBehavior" target="classFrame">AutoMappingBehavior</a></li>
                 <li><a href="org/apache/ibatis/session/AutoMappingUnknownColumnBehavior.html#AutoMappingUnknownColumnBehavior" target="classFrame">AutoMappingUnknownColumnBehavior</a></li>
@@ -74,8 +75,7 @@
                 <li><a href="org/apache/ibatis/type/ClobTypeHandler.html#ClobTypeHandler" target="classFrame">ClobTypeHandler</a></li>
                 <li><a href="org/apache/ibatis/reflection/wrapper/CollectionWrapper.html#CollectionWrapper" target="classFrame">CollectionWrapper</a></li>
                 <li><a href="org/apache/ibatis/session/Configuration.html#Configuration" target="classFrame">Configuration</a></li>
-                <li><a href="org/apache/ibatis/session/Configuration.html#Configuration.StrictMap" target="classFrame">Configuration.StrictMap</a></li>
-                <li><a href="org/apache/ibatis/session/Configuration.html#Configuration.StrictMap.Ambiguity" target="classFrame">Configuration.StrictMap.Ambiguity</a></li>
+                <li><a href="org/apache/ibatis/type/ConflictedTypeHandler.html#ConflictedTypeHandler" target="classFrame">ConflictedTypeHandler</a></li>
                 <li><a href="org/apache/ibatis/logging/jdbc/ConnectionLogger.html#ConnectionLogger" target="classFrame">ConnectionLogger</a></li>
                 <li><a href="org/apache/ibatis/annotations/ConstructorArgs.html#ConstructorArgs" target="classFrame">ConstructorArgs</a></li>
                 <li><a href="org/apache/ibatis/cursor/Cursor.html#Cursor" target="classFrame">Cursor</a></li>
@@ -111,8 +111,6 @@
                 <li><a href="org/apache/ibatis/mapping/Discriminator.html#Discriminator.Builder" target="classFrame">Discriminator.Builder</a></li>
                 <li><a href="org/apache/ibatis/type/DoubleTypeHandler.html#DoubleTypeHandler" target="classFrame">DoubleTypeHandler</a></li>
                 <li><a href="org/apache/ibatis/scripting/xmltags/DynamicContext.html#DynamicContext" target="classFrame">DynamicContext</a></li>
-                <li><a href="org/apache/ibatis/scripting/xmltags/DynamicContext.html#DynamicContext.ContextAccessor" target="classFrame">DynamicContext.ContextAccessor</a></li>
-                <li><a href="org/apache/ibatis/scripting/xmltags/DynamicContext.html#DynamicContext.ContextMap" target="classFrame">DynamicContext.ContextMap</a></li>
                 <li><a href="org/apache/ibatis/scripting/xmltags/DynamicSqlSource.html#DynamicSqlSource" target="classFrame">DynamicSqlSource</a></li>
                 <li><a href="org/apache/ibatis/type/EnumOrdinalTypeHandler.html#EnumOrdinalTypeHandler" target="classFrame">EnumOrdinalTypeHandler</a></li>
                 <li><a href="org/apache/ibatis/type/EnumTypeHandler.html#EnumTypeHandler" target="classFrame">EnumTypeHandler</a></li>
@@ -132,7 +130,6 @@
                 <li><a href="org/apache/ibatis/type/FloatTypeHandler.html#FloatTypeHandler" target="classFrame">FloatTypeHandler</a></li>
                 <li><a href="org/apache/ibatis/annotations/Flush.html#Flush" target="classFrame">Flush</a></li>
                 <li><a href="org/apache/ibatis/scripting/xmltags/ForEachSqlNode.html#ForEachSqlNode" target="classFrame">ForEachSqlNode</a></li>
-                <li><a href="org/apache/ibatis/scripting/xmltags/ForEachSqlNode.html#ForEachSqlNode.FilteredDynamicContext" target="classFrame">ForEachSqlNode.FilteredDynamicContext</a></li>
                 <li><a href="org/apache/ibatis/scripting/xmltags/ForEachSqlNode.html#ForEachSqlNode.PrefixedContext" target="classFrame">ForEachSqlNode.PrefixedContext</a></li>
                 <li><a href="org/apache/ibatis/parsing/GenericTokenParser.html#GenericTokenParser" target="classFrame">GenericTokenParser</a></li>
                 <li><a href="org/apache/ibatis/reflection/invoker/GetFieldInvoker.html#GetFieldInvoker" target="classFrame">GetFieldInvoker</a></li>
@@ -191,22 +188,17 @@
                 <li><a href="org/apache/ibatis/transaction/managed/ManagedTransaction.html#ManagedTransaction" target="classFrame">ManagedTransaction</a></li>
                 <li><a href="org/apache/ibatis/transaction/managed/ManagedTransactionFactory.html#ManagedTransactionFactory" target="classFrame">ManagedTransactionFactory</a></li>
                 <li><a href="org/apache/ibatis/annotations/MapKey.html#MapKey" target="classFrame">MapKey</a></li>
-                <li><a href="org/apache/ibatis/util/MapUtil.html#MapUtil" target="classFrame">MapUtil</a></li>
                 <li><a href="org/apache/ibatis/reflection/wrapper/MapWrapper.html#MapWrapper" target="classFrame">MapWrapper</a></li>
                 <li><a href="org/apache/ibatis/type/MappedJdbcTypes.html#MappedJdbcTypes" target="classFrame">MappedJdbcTypes</a></li>
                 <li><a href="org/apache/ibatis/mapping/MappedStatement.html#MappedStatement" target="classFrame">MappedStatement</a></li>
                 <li><a href="org/apache/ibatis/mapping/MappedStatement.html#MappedStatement.Builder" target="classFrame">MappedStatement.Builder</a></li>
                 <li><a href="org/apache/ibatis/type/MappedTypes.html#MappedTypes" target="classFrame">MappedTypes</a></li>
                 <li><a href="org/apache/ibatis/builder/annotation/MapperAnnotationBuilder.html#MapperAnnotationBuilder" target="classFrame">MapperAnnotationBuilder</a></li>
-                <li><a href="org/apache/ibatis/builder/annotation/MapperAnnotationBuilder.html#MapperAnnotationBuilder.AnnotationWrapper" target="classFrame">MapperAnnotationBuilder.AnnotationWrapper</a></li>
                 <li><a href="org/apache/ibatis/builder/MapperBuilderAssistant.html#MapperBuilderAssistant" target="classFrame">MapperBuilderAssistant</a></li>
                 <li><a href="org/apache/ibatis/binding/MapperMethod.html#MapperMethod" target="classFrame">MapperMethod</a></li>
-                <li><a href="org/apache/ibatis/binding/MapperMethod.html#MapperMethod.MethodSignature" target="classFrame">MapperMethod.MethodSignature</a></li>
-                <li><a href="org/apache/ibatis/binding/MapperMethod.html#MapperMethod.ParamMap" target="classFrame">MapperMethod.ParamMap</a></li>
-                <li><a href="org/apache/ibatis/binding/MapperMethod.html#MapperMethod.SqlCommand" target="classFrame">MapperMethod.SqlCommand</a></li>
+                <li><a href="org/apache/ibatis/binding/MapperMethodInvoker.html#MapperMethodInvoker" target="classFrame">MapperMethodInvoker</a></li>
                 <li><a href="org/apache/ibatis/binding/MapperProxy.html#MapperProxy" target="classFrame">MapperProxy</a></li>
                 <li><a href="org/apache/ibatis/binding/MapperProxy.html#MapperProxy.DefaultMethodInvoker" target="classFrame">MapperProxy.DefaultMethodInvoker</a></li>
-                <li><a href="org/apache/ibatis/binding/MapperProxy.html#MapperProxy.MapperMethodInvoker" target="classFrame">MapperProxy.MapperMethodInvoker</a></li>
                 <li><a href="org/apache/ibatis/binding/MapperProxy.html#MapperProxy.PlainMethodInvoker" target="classFrame">MapperProxy.PlainMethodInvoker</a></li>
                 <li><a href="org/apache/ibatis/binding/MapperProxyFactory.html#MapperProxyFactory" target="classFrame">MapperProxyFactory</a></li>
                 <li><a href="org/apache/ibatis/binding/MapperRegistry.html#MapperRegistry" target="classFrame">MapperRegistry</a></li>
@@ -218,6 +210,8 @@
                 <li><a href="org/apache/ibatis/type/MonthTypeHandler.html#MonthTypeHandler" target="classFrame">MonthTypeHandler</a></li>
                 <li><a href="org/apache/ibatis/type/NClobTypeHandler.html#NClobTypeHandler" target="classFrame">NClobTypeHandler</a></li>
                 <li><a href="org/apache/ibatis/type/NStringTypeHandler.html#NStringTypeHandler" target="classFrame">NStringTypeHandler</a></li>
+                <li><a href="org/apache/ibatis/annotations/NamedResultMap.html#NamedResultMap" target="classFrame">NamedResultMap</a></li>
+                <li><a href="org/apache/ibatis/annotations/NamedResultMaps.html#NamedResultMaps" target="classFrame">NamedResultMaps</a></li>
                 <li><a href="org/apache/ibatis/executor/keygen/NoKeyGenerator.html#NoKeyGenerator" target="classFrame">NoKeyGenerator</a></li>
                 <li><a href="org/apache/ibatis/logging/nologging/NoLoggingImpl.html#NoLoggingImpl" target="classFrame">NoLoggingImpl</a></li>
                 <li><a href="org/apache/ibatis/jdbc/Null.html#Null" target="classFrame">Null</a></li>
@@ -244,8 +238,12 @@
                 <li><a href="org/apache/ibatis/mapping/ParameterMap.html#ParameterMap.Builder" target="classFrame">ParameterMap.Builder</a></li>
                 <li><a href="org/apache/ibatis/mapping/ParameterMapping.html#ParameterMapping" target="classFrame">ParameterMapping</a></li>
                 <li><a href="org/apache/ibatis/mapping/ParameterMapping.html#ParameterMapping.Builder" target="classFrame">ParameterMapping.Builder</a></li>
+                <li><a href="org/apache/ibatis/builder/ParameterMappingTokenHandler.html#ParameterMappingTokenHandler" target="classFrame">ParameterMappingTokenHandler</a></li>
                 <li><a href="org/apache/ibatis/mapping/ParameterMode.html#ParameterMode" target="classFrame">ParameterMode</a></li>
                 <li><a href="org/apache/ibatis/parsing/ParsingException.html#ParsingException" target="classFrame">ParsingException</a></li>
+                <li><a href="org/apache/ibatis/executor/resultset/PendingConstructorCreation.html#PendingConstructorCreation" target="classFrame">PendingConstructorCreation</a></li>
+                <li><a href="org/apache/ibatis/executor/resultset/PendingCreationKey.html#PendingCreationKey" target="classFrame">PendingCreationKey</a></li>
+                <li><a href="org/apache/ibatis/executor/resultset/PendingCreationMetaInfo.html#PendingCreationMetaInfo" target="classFrame">PendingCreationMetaInfo</a></li>
                 <li><a href="org/apache/ibatis/cache/impl/PerpetualCache.html#PerpetualCache" target="classFrame">PerpetualCache</a></li>
                 <li><a href="org/apache/ibatis/exceptions/PersistenceException.html#PersistenceException" target="classFrame">PersistenceException</a></li>
                 <li><a href="org/apache/ibatis/plugin/Plugin.html#Plugin" target="classFrame">Plugin</a></li>
@@ -259,7 +257,6 @@
                 <li><a href="org/apache/ibatis/reflection/property/PropertyCopier.html#PropertyCopier" target="classFrame">PropertyCopier</a></li>
                 <li><a href="org/apache/ibatis/reflection/property/PropertyNamer.html#PropertyNamer" target="classFrame">PropertyNamer</a></li>
                 <li><a href="org/apache/ibatis/parsing/PropertyParser.html#PropertyParser" target="classFrame">PropertyParser</a></li>
-                <li><a href="org/apache/ibatis/parsing/PropertyParser.html#PropertyParser.VariableTokenHandler" target="classFrame">PropertyParser.VariableTokenHandler</a></li>
                 <li><a href="org/apache/ibatis/reflection/property/PropertyTokenizer.html#PropertyTokenizer" target="classFrame">PropertyTokenizer</a></li>
                 <li><a href="org/apache/ibatis/builder/annotation/ProviderContext.html#ProviderContext" target="classFrame">ProviderContext</a></li>
                 <li><a href="org/apache/ibatis/builder/annotation/ProviderMethodResolver.html#ProviderMethodResolver" target="classFrame">ProviderMethodResolver</a></li>
@@ -291,6 +288,10 @@
                 <li><a href="org/apache/ibatis/builder/ResultMapResolver.html#ResultMapResolver" target="classFrame">ResultMapResolver</a></li>
                 <li><a href="org/apache/ibatis/mapping/ResultMapping.html#ResultMapping" target="classFrame">ResultMapping</a></li>
                 <li><a href="org/apache/ibatis/mapping/ResultMapping.html#ResultMapping.Builder" target="classFrame">ResultMapping.Builder</a></li>
+                <li><a href="org/apache/ibatis/builder/ResultMappingConstructorResolver.html#ResultMappingConstructorResolver" target="classFrame">ResultMappingConstructorResolver</a></li>
+                <li><a href="org/apache/ibatis/builder/ResultMappingConstructorResolver.html#ResultMappingConstructorResolver.ConstructorArg" target="classFrame">ResultMappingConstructorResolver.ConstructorArg</a></li>
+                <li><a href="org/apache/ibatis/builder/ResultMappingConstructorResolver.html#ResultMappingConstructorResolver.ConstructorMetaInfo" target="classFrame">ResultMappingConstructorResolver.ConstructorMetaInfo</a></li>
+                <li><a href="org/apache/ibatis/annotations/ResultOrdered.html#ResultOrdered" target="classFrame">ResultOrdered</a></li>
                 <li><a href="org/apache/ibatis/executor/resultset/ResultSetHandler.html#ResultSetHandler" target="classFrame">ResultSetHandler</a></li>
                 <li><a href="org/apache/ibatis/logging/jdbc/ResultSetLogger.html#ResultSetLogger" target="classFrame">ResultSetLogger</a></li>
                 <li><a href="org/apache/ibatis/mapping/ResultSetType.html#ResultSetType" target="classFrame">ResultSetType</a></li>
@@ -323,7 +324,6 @@
                 <li><a href="org/apache/ibatis/executor/statement/SimpleStatementHandler.html#SimpleStatementHandler" target="classFrame">SimpleStatementHandler</a></li>
                 <li><a href="org/apache/ibatis/type/SimpleTypeRegistry.html#SimpleTypeRegistry" target="classFrame">SimpleTypeRegistry</a></li>
                 <li><a href="org/apache/ibatis/logging/slf4j/Slf4jImpl.html#Slf4jImpl" target="classFrame">Slf4jImpl</a></li>
-                <li><a href="org/apache/ibatis/logging/slf4j/Slf4jImpl.html#Slf4jImpl.null" target="classFrame">Slf4jImpl.null</a></li>
                 <li><a href="org/apache/ibatis/logging/slf4j/Slf4jLocationAwareLoggerImpl.html#Slf4jLocationAwareLoggerImpl" target="classFrame">Slf4jLocationAwareLoggerImpl</a></li>
                 <li><a href="org/apache/ibatis/logging/slf4j/Slf4jLoggerImpl.html#Slf4jLoggerImpl" target="classFrame">Slf4jLoggerImpl</a></li>
                 <li><a href="org/apache/ibatis/cache/decorators/SoftCache.html#SoftCache" target="classFrame">SoftCache</a></li>
@@ -341,7 +341,6 @@
                 <li><a href="org/apache/ibatis/session/SqlSessionManager.html#SqlSessionManager.SqlSessionInterceptor" target="classFrame">SqlSessionManager.SqlSessionInterceptor</a></li>
                 <li><a href="org/apache/ibatis/mapping/SqlSource.html#SqlSource" target="classFrame">SqlSource</a></li>
                 <li><a href="org/apache/ibatis/builder/SqlSourceBuilder.html#SqlSourceBuilder" target="classFrame">SqlSourceBuilder</a></li>
-                <li><a href="org/apache/ibatis/builder/SqlSourceBuilder.html#SqlSourceBuilder.ParameterMappingTokenHandler" target="classFrame">SqlSourceBuilder.ParameterMappingTokenHandler</a></li>
                 <li><a href="org/apache/ibatis/type/SqlTimeTypeHandler.html#SqlTimeTypeHandler" target="classFrame">SqlTimeTypeHandler</a></li>
                 <li><a href="org/apache/ibatis/type/SqlTimestampTypeHandler.html#SqlTimestampTypeHandler" target="classFrame">SqlTimestampTypeHandler</a></li>
                 <li><a href="org/apache/ibatis/type/SqlxmlTypeHandler.html#SqlxmlTypeHandler" target="classFrame">SqlxmlTypeHandler</a></li>
@@ -357,8 +356,6 @@
                 <li><a href="org/apache/ibatis/reflection/SystemMetaObject.html#SystemMetaObject" target="classFrame">SystemMetaObject</a></li>
                 <li><a href="org/apache/ibatis/reflection/SystemMetaObject.html#SystemMetaObject.NullObject" target="classFrame">SystemMetaObject.NullObject</a></li>
                 <li><a href="org/apache/ibatis/scripting/xmltags/TextSqlNode.html#TextSqlNode" target="classFrame">TextSqlNode</a></li>
-                <li><a href="org/apache/ibatis/scripting/xmltags/TextSqlNode.html#TextSqlNode.BindingTokenParser" target="classFrame">TextSqlNode.BindingTokenParser</a></li>
-                <li><a href="org/apache/ibatis/scripting/xmltags/TextSqlNode.html#TextSqlNode.DynamicCheckerTokenParser" target="classFrame">TextSqlNode.DynamicCheckerTokenParser</a></li>
                 <li><a href="org/apache/ibatis/type/TimeOnlyTypeHandler.html#TimeOnlyTypeHandler" target="classFrame">TimeOnlyTypeHandler</a></li>
                 <li><a href="org/apache/ibatis/parsing/TokenHandler.html#TokenHandler" target="classFrame">TokenHandler</a></li>
                 <li><a href="org/apache/ibatis/exceptions/TooManyResultsException.html#TooManyResultsException" target="classFrame">TooManyResultsException</a></li>
@@ -371,41 +368,10 @@
                 <li><a href="org/apache/ibatis/scripting/xmltags/TrimSqlNode.html#TrimSqlNode" target="classFrame">TrimSqlNode</a></li>
                 <li><a href="org/apache/ibatis/scripting/xmltags/TrimSqlNode.html#TrimSqlNode.FilteredDynamicContext" target="classFrame">TrimSqlNode.FilteredDynamicContext</a></li>
                 <li><a href="org/apache/ibatis/type/TypeAliasRegistry.html#TypeAliasRegistry" target="classFrame">TypeAliasRegistry</a></li>
-                <li><a href="org/apache/ibatis/type/TypeAliasRegistry.html#TypeAliasRegistry.null" target="classFrame">TypeAliasRegistry.null</a></li>
-                <li><a href="org/apache/ibatis/type/TypeAliasRegistry.html#TypeAliasRegistry.null.null" target="classFrame">TypeAliasRegistry.null.null</a></li>
-                <li><a href="org/apache/ibatis/type/TypeAliasRegistry.html#TypeAliasRegistry.null.null.null" target="classFrame">TypeAliasRegistry.null.null.null</a></li>
-                <li><a href="org/apache/ibatis/type/TypeAliasRegistry.html#TypeAliasRegistry.null.null.null.null" target="classFrame">TypeAliasRegistry.null.null.null.null</a></li>
-                <li><a href="org/apache/ibatis/type/TypeAliasRegistry.html#TypeAliasRegistry.null.null.null.null.null" target="classFrame">TypeAliasRegistry.null.null.null.null.null</a></li>
-                <li><a href="org/apache/ibatis/type/TypeAliasRegistry.html#TypeAliasRegistry.null.null.null.null.null.null" target="classFrame">TypeAliasRegistry.null.null.null.null.null.null</a></li>
-                <li><a href="org/apache/ibatis/type/TypeAliasRegistry.html#TypeAliasRegistry.null.null.null.null.null.null.null" target="classFrame">TypeAliasRegistry.null.null.null.null.null.null.null</a></li>
-                <li><a href="org/apache/ibatis/type/TypeAliasRegistry.html#TypeAliasRegistry.null.null.null.null.null.null.null.null" target="classFrame">TypeAliasRegistry.null.null.null.null.null.null.null.null</a></li>
-                <li><a href="org/apache/ibatis/type/TypeAliasRegistry.html#TypeAliasRegistry.null.null.null.null.null.null.null.null.null" target="classFrame">TypeAliasRegistry.null.null.null.null.null.null.null.null.null</a></li>
-                <li><a href="org/apache/ibatis/type/TypeAliasRegistry.html#TypeAliasRegistry.null.null.null.null.null.null.null.null.null.null" target="classFrame">TypeAliasRegistry.null.null.null.null.null.null.null.null.null.null</a></li>
-                <li><a href="org/apache/ibatis/type/TypeAliasRegistry.html#TypeAliasRegistry.null.null.null.null.null.null.null.null.null.null.null" target="classFrame">TypeAliasRegistry.null.null.null.null.null.null.null.null.null.null.null</a></li>
-                <li><a href="org/apache/ibatis/type/TypeAliasRegistry.html#TypeAliasRegistry.null.null.null.null.null.null.null.null.null.null.null.null" target="classFrame">TypeAliasRegistry.null.null.null.null.null.null.null.null.null.null.null.null</a></li>
-                <li><a href="org/apache/ibatis/type/TypeAliasRegistry.html#TypeAliasRegistry.null.null.null.null.null.null.null.null.null.null.null.null.null" target="classFrame">TypeAliasRegistry.null.null.null.null.null.null.null.null.null.null.null.null.null</a></li>
-                <li><a href="org/apache/ibatis/type/TypeAliasRegistry.html#TypeAliasRegistry.null.null.null.null.null.null.null.null.null.null.null.null.null.null" target="classFrame">TypeAliasRegistry.null.null.null.null.null.null.null.null.null.null.null.null.null.null</a></li>
-                <li><a href="org/apache/ibatis/type/TypeAliasRegistry.html#TypeAliasRegistry.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null" target="classFrame">TypeAliasRegistry.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null</a></li>
-                <li><a href="org/apache/ibatis/type/TypeAliasRegistry.html#TypeAliasRegistry.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null" target="classFrame">TypeAliasRegistry.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null</a></li>
-                <li><a href="org/apache/ibatis/type/TypeAliasRegistry.html#TypeAliasRegistry.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null" target="classFrame">TypeAliasRegistry.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null</a></li>
-                <li><a href="org/apache/ibatis/type/TypeAliasRegistry.html#TypeAliasRegistry.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null" target="classFrame">TypeAliasRegistry.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null</a></li>
-                <li><a href="org/apache/ibatis/type/TypeAliasRegistry.html#TypeAliasRegistry.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null" target="classFrame">TypeAliasRegistry.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null</a></li>
-                <li><a href="org/apache/ibatis/type/TypeAliasRegistry.html#TypeAliasRegistry.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null" target="classFrame">TypeAliasRegistry.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null</a></li>
-                <li><a href="org/apache/ibatis/type/TypeAliasRegistry.html#TypeAliasRegistry.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null" target="classFrame">TypeAliasRegistry.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null</a></li>
-                <li><a href="org/apache/ibatis/type/TypeAliasRegistry.html#TypeAliasRegistry.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null" target="classFrame">TypeAliasRegistry.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null</a></li>
-                <li><a href="org/apache/ibatis/type/TypeAliasRegistry.html#TypeAliasRegistry.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null" target="classFrame">TypeAliasRegistry.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null</a></li>
-                <li><a href="org/apache/ibatis/type/TypeAliasRegistry.html#TypeAliasRegistry.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null" target="classFrame">TypeAliasRegistry.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null</a></li>
-                <li><a href="org/apache/ibatis/type/TypeAliasRegistry.html#TypeAliasRegistry.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null" target="classFrame">TypeAliasRegistry.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null.null</a></li>
                 <li><a href="org/apache/ibatis/annotations/TypeDiscriminator.html#TypeDiscriminator" target="classFrame">TypeDiscriminator</a></li>
                 <li><a href="org/apache/ibatis/type/TypeException.html#TypeException" target="classFrame">TypeException</a></li>
                 <li><a href="org/apache/ibatis/type/TypeHandler.html#TypeHandler" target="classFrame">TypeHandler</a></li>
                 <li><a href="org/apache/ibatis/type/TypeHandlerRegistry.html#TypeHandlerRegistry" target="classFrame">TypeHandlerRegistry</a></li>
-                <li><a href="org/apache/ibatis/type/TypeHandlerRegistry.html#TypeHandlerRegistry.null" target="classFrame">TypeHandlerRegistry.null</a></li>
-                <li><a href="org/apache/ibatis/type/TypeHandlerRegistry.html#TypeHandlerRegistry.null.null" target="classFrame">TypeHandlerRegistry.null.null</a></li>
-                <li><a href="org/apache/ibatis/type/TypeHandlerRegistry.html#TypeHandlerRegistry.null.null.null" target="classFrame">TypeHandlerRegistry.null.null.null</a></li>
-                <li><a href="org/apache/ibatis/type/TypeHandlerRegistry.html#TypeHandlerRegistry.null.null.null.null" target="classFrame">TypeHandlerRegistry.null.null.null.null</a></li>
-                <li><a href="org/apache/ibatis/type/TypeHandlerRegistry.html#TypeHandlerRegistry.null.null.null.null.null" target="classFrame">TypeHandlerRegistry.null.null.null.null.null</a></li>
-                <li><a href="org/apache/ibatis/type/TypeHandlerRegistry.html#TypeHandlerRegistry.null.null.null.null.null.null" target="classFrame">TypeHandlerRegistry.null.null.null.null.null.null</a></li>
                 <li><a href="org/apache/ibatis/reflection/TypeParameterResolver.html#TypeParameterResolver" target="classFrame">TypeParameterResolver</a></li>
                 <li><a href="org/apache/ibatis/reflection/TypeParameterResolver.html#TypeParameterResolver.GenericArrayTypeImpl" target="classFrame">TypeParameterResolver.GenericArrayTypeImpl</a></li>
                 <li><a href="org/apache/ibatis/reflection/TypeParameterResolver.html#TypeParameterResolver.ParameterizedTypeImpl" target="classFrame">TypeParameterResolver.ParameterizedTypeImpl</a></li>
@@ -423,7 +389,6 @@
                 <li><a href="org/apache/ibatis/io/VFS.html#VFS.VFSHolder" target="classFrame">VFS.VFSHolder</a></li>
                 <li><a href="org/apache/ibatis/scripting/xmltags/VarDeclSqlNode.html#VarDeclSqlNode" target="classFrame">VarDeclSqlNode</a></li>
                 <li><a href="org/apache/ibatis/mapping/VendorDatabaseIdProvider.html#VendorDatabaseIdProvider" target="classFrame">VendorDatabaseIdProvider</a></li>
-                <li><a href="org/apache/ibatis/mapping/VendorDatabaseIdProvider.html#VendorDatabaseIdProvider.LogHolder" target="classFrame">VendorDatabaseIdProvider.LogHolder</a></li>
                 <li><a href="org/apache/ibatis/cache/decorators/WeakCache.html#WeakCache" target="classFrame">WeakCache</a></li>
                 <li><a href="org/apache/ibatis/cache/decorators/WeakCache.html#WeakCache.WeakEntry" target="classFrame">WeakCache.WeakEntry</a></li>
                 <li><a href="org/apache/ibatis/scripting/xmltags/WhereSqlNode.html#WhereSqlNode" target="classFrame">WhereSqlNode</a></li>
@@ -436,6 +401,7 @@
                 <li><a href="org/apache/ibatis/scripting/xmltags/XMLScriptBuilder.html#XMLScriptBuilder" target="classFrame">XMLScriptBuilder</a></li>
                 <li><a href="org/apache/ibatis/scripting/xmltags/XMLScriptBuilder.html#XMLScriptBuilder.BindHandler" target="classFrame">XMLScriptBuilder.BindHandler</a></li>
                 <li><a href="org/apache/ibatis/scripting/xmltags/XMLScriptBuilder.html#XMLScriptBuilder.ChooseHandler" target="classFrame">XMLScriptBuilder.ChooseHandler</a></li>
+                <li><a href="org/apache/ibatis/scripting/xmltags/XMLScriptBuilder.html#XMLScriptBuilder.EmptySqlNode" target="classFrame">XMLScriptBuilder.EmptySqlNode</a></li>
                 <li><a href="org/apache/ibatis/scripting/xmltags/XMLScriptBuilder.html#XMLScriptBuilder.ForEachHandler" target="classFrame">XMLScriptBuilder.ForEachHandler</a></li>
                 <li><a href="org/apache/ibatis/scripting/xmltags/XMLScriptBuilder.html#XMLScriptBuilder.IfHandler" target="classFrame">XMLScriptBuilder.IfHandler</a></li>
                 <li><a href="org/apache/ibatis/scripting/xmltags/XMLScriptBuilder.html#XMLScriptBuilder.NodeHandler" target="classFrame">XMLScriptBuilder.NodeHandler</a></li>

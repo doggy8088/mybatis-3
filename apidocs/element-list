@@ -1,4 +1,3 @@
-org.apache.ibatis
 org.apache.ibatis.annotations
 org.apache.ibatis.binding
 org.apache.ibatis.builder
@@ -25,7 +24,6 @@ org.apache.ibatis.executor.resultset
 org.apache.ibatis.executor.statement
 org.apache.ibatis.io
 org.apache.ibatis.jdbc
-org.apache.ibatis.lang
 org.apache.ibatis.logging
 org.apache.ibatis.logging.commons
 org.apache.ibatis.logging.jdbc
