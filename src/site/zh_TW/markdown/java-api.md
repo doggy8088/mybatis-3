@@ -226,8 +226,8 @@ boolean isStarted = manager.isManagedSessionStarted();
 當受控工作階段啟動時，呼叫 `commit()`、`rollback()`、`close()` 或任何資料存取方法（`selectOne`、`selectList`、`insert`、`update`、`delete` 等）都將對該執行緒區域工作階段進行操作。工作階段結束後，您必須確保呼叫 `close()` 以清理執行緒區域儲存區。因為它使用 ThreadLocal，在連線池化的 Web 伺服器環境中（如 Tomcat 或 Jetty），若未呼叫 `close()` 將使 SQL 工作階段洩漏至執行緒上，當該執行緒被重複用於不同的 HTTP 請求時，會導致無法預測的交易行為或連線洩漏：
 
 ```java
+manager.startManagedSession();
 try {
-    manager.startManagedSession();
     // ... 使用工作階段 ...
     manager.commit();
 } finally {
@@ -235,7 +235,7 @@ try {
 }
 ```
 
-若尚未啟動任何受控工作階段，在 SqlSessionManager 上呼叫任何 SqlSession 方法將自動開啟一個短暫的工作階段，執行該單一方法，並立即將其關閉。請注意，它不會明確提交寫入操作，因此該模式主要適用於單一讀取查詢。
+若尚未啟動任何受控工作階段，透過內部代理呼叫資料存取方法（如 `selectOne`、`selectList`、`insert`、`update`、`delete`）將自動開啟一個短暫的工作階段，執行該單一方法、明確提交（commit）該暫時工作階段，並在 `finally` 區塊中立即將其關閉；而直接呼叫工作階段生命週期與交易控制方法（如 `commit()`、`rollback()`、`close()`）在未啟動受控工作階段時則會拋出 `SqlSessionException`。
 
 <a id="difference-from-defaultsqlsessionfactory"></a>
 ##### 與 DefaultSqlSessionFactory 的差異 (Difference from DefaultSqlSessionFactory)

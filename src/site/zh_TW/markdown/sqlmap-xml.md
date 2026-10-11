@@ -1253,17 +1253,17 @@ SELECT * FROM POST WHERE BLOG_ID = #{id}
   <result property="model" column="model"/>
   <result property="color" column="color"/>
   <discriminator javaType="int" column="vehicle_type">
-    <case value="1" resultType="carResult">
+    <case value="1" resultType="Car">
       <result property="doorCount" column="door_count" />
     </case>
-    <case value="2" resultType="truckResult">
+    <case value="2" resultType="Truck">
       <result property="boxSize" column="box_size" />
       <result property="extendedCab" column="extended_cab" />
     </case>
-    <case value="3" resultType="vanResult">
+    <case value="3" resultType="Van">
       <result property="powerSlidingDoor" column="power_sliding_door" />
     </case>
-    <case value="4" resultType="suvResult">
+    <case value="4" resultType="SUV">
       <result property="allWheelDrive" column="all_wheel_drive" />
     </case>
   </discriminator>
