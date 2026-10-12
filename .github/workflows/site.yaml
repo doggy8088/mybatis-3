@@ -1,20 +1,22 @@
 name: Site
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - site
+      - master
 
 permissions:
   contents: write
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
+  group: ${{ github.workflow }}-gh-pages
   cancel-in-progress: true
 
 jobs:
   build:
-    if: github.repository_owner == 'mybatis' && contains(toJSON(github.event.head_commit.message), '[maven-release-plugin] prepare release')
+    if: (github.repository_owner == 'doggy8088') || (github.repository_owner == 'mybatis' && contains(toJSON(github.event.head_commit.message), '[maven-release-plugin] prepare release'))
     runs-on: ubuntu-latest
     timeout-minutes: 60
     steps:
@@ -30,6 +32,14 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NVD_API_KEY: ${{ secrets.NVD_API_KEY }}
+      - name: Ensure CNAME and .nojekyll in staging
+        run: |
+          if [ "${{ github.repository_owner }}" = "doggy8088" ]; then
+            test -f target/staging/CNAME || echo "mybatis.gh.miniasp.com" > target/staging/CNAME
+          else
+            rm -f target/staging/CNAME
+          fi
+          test -f target/staging/.nojekyll || touch target/staging/.nojekyll
       - name: Deploy Site to gh-pages
         uses: JamesIves/github-pages-deploy-action@fa24774553152dd7873cd16ebd8d959b010c5445 # v4
         with:
