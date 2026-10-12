@@ -20,7 +20,7 @@
     xsi:schemaLocation="http://maven.apache.org/SITE/2.0.0 https://maven.apache.org/xsd/site-2.0.0.xsd">
 
   <body>
-    <menu name="參考文件 (繁體中文)">
+    <menu name="參考文件">
       <item name="簡介" href="index.html"/>
       <item name="入門指南" href="getting-started.html"/>
       <item name="XML 設定" href="configuration.html" collapse="true">
